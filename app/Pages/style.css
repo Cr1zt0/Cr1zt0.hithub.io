@@ -409,7 +409,7 @@ footer{
     transition: all 200ms;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .search-form {
         top: 4%;
         width: 60%;
@@ -451,8 +451,45 @@ footer{
         align-items: center;
     }
 
-    .match-card {
-        max-width: 100%;
+    .match-card{
+
+        width: 100px;
+
+    }
+
+    .match-outcome{
+
+        margin-left: -45%;
+
+    }
+
+    .match-info {
+        
+        margin-left: -45% ;
+        transform: scale(0.8);
+    
+    }
+
+    .participants-section-VICTORIA{
+
+        margin-left: -105%;
+        padding: 8px;
+        transform: scale(0.78);
+
+    }
+
+    .participants-section-DERROTA{
+
+        margin-left: -105%;
+        padding: 8px;
+        transform: scale(0.78);
+
+    }
+
+    .participant-name{
+
+        max-width: 90px;
+
     }
 
     footer {
