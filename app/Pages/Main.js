@@ -390,7 +390,7 @@ document.addEventListener('click', function (e) {
         ];
 
         const randomIndex = Math.floor(Math.random() * urls.length);
-        window.open(urls[randomIndex], "_blank");
+        window..location.href(urls[randomIndex], "_blank");
         
     }
 
