@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApiLol</title>
+    <link rel="stylesheet" href="\Pages\style.css">
+    <script src="\Pages\Main.js" defer></script>
+    <script src="https://kit.fontawesome.com/d9feec938f.js" crossorigin="anonymous"></script>
+</head>
+
+<header>
+    <button id="BackButon" class="arrow-button left">
+    </button>
+</header>
+
+<body>
+
+    <div class="login-form" id="container">
+
+        <form class="Server" id="Tbox" action="#">
+            <label for="region">Server</label>
+            <select id="region">
+                <option value="LAN">LAN</option>
+                <option value="LAS">LAS</option>
+                <option value="NA">NA</option>
+            </select>
+        </form>
+
+    </div>
+    <div class="search-form" id="search">
+        <form id="buscar">
+            <input class="content" type="text" name="Search" id="Search01" placeholder="Buscar Jugador">
+            <span class="tag" id="RTag">#LAN</span>
+            <button id="BtnBuscar" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <datalist id="summonerSuggestions"></datalist>
+    </div>
+
+    <a id="B1" class="B1" type="submit">TEST</a>
+
+    <div id="error-message" style="color: red; display: none;"></div>
+
+    <script>
+        const regionSelect = document.getElementById('region');
+        const regionTag = document.getElementById('RTag');
+        const searchInput = document.getElementById('Search01');
+
+        regionSelect.addEventListener('change', () => {
+            const selected = regionSelect.value;
+            regionTag.textContent = `#${selected}`;
+        });
+
+
+        searchInput.addEventListener('input', () => {
+            if (searchInput.value.trim() != "") {
+                regionTag.style.opacity = 0; // Oculta el tag
+            } else {
+                regionTag.style.opacity = '50%'; // Vuelve a mostrar el tag
+            }
+        });
+
+
+    </script>
+
+    <section class="summoner-info" id="summoner-info" style="display: none;">
+        <div id="summoner-header" class="summoner-header">
+            <img id="profileIcon" src="" alt="Icono de Perfil" style="width: 100px; height: 100px; border-radius: 10%;">
+            <h3 class="summonerName" id="summonerName"></h3>
+            <p class="summonerLevel">Nivel: <span id="summonerLevel"></span></p>
+        </div>
+    </section>
+
+    <div id="match-history" class="match-history-container">
+        <div id="match-list" class="match-list">
+            <p></p>
+        </div>
+    </div>
+    <footer id = "Border"></footer>
+</body>
+
+
+
+</html>

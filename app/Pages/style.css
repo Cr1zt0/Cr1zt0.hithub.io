@@ -1,0 +1,475 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 99%;
+  background-color: #28292d;
+}
+
+.content {
+    flex: 1; /* Esta es la propiedad MÁGICA: hace que este contenedor crezca */
+             /* y ocupe todo el espacio sobrante, empujando el footer hacia abajo. */
+    
+    /* Para centrar el contenido (como tu barra de búsqueda) */
+}
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.search-form {
+    position: relative; /* Cambié de absolute a relative */
+    margin-top: 18%;
+    margin-left: 50%;
+    transform: translateX(-50%); /* Centra el contenedor en la pantalla */
+    background-color: white;
+    width: 90%;
+    max-width: 600px;
+    height: 60px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px; /* Para agregar algo de espacio interno */
+    transition: all 1000ms;
+}
+
+.search-form input {
+    font-size: 18px;
+    border: 0;
+    outline: 0;
+     /* Hace que el input ocupe todo el espacio disponible */
+    padding: 10px;
+    border-radius: 20px; /* Ajusté el border-radius para que sea coherente */
+    width: 520px;
+    
+}
+
+.search-form button {
+    font-size: 18px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(239, 108, 139);
+    margin-left: 10px; /* Espacio entre el input y el botón */
+}
+
+.search-form .tag {
+    position: absolute;
+    background-color: #cfcfcf; /* Fondo más oscuro para el #LAN */
+    color: #000000;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    opacity: 50%;
+    left: 80%;
+    top:27%;
+
+}
+
+.Server{
+    position: absolute;
+    margin-left: 30%;
+    margin-top:23%;
+    border-radius: 5px;
+    transition: all 1000ms;
+    color: #ffffff;
+
+}
+
+select {
+    outline: 0;
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid crimson;
+    padding: 4px;
+    border-radius: 9px;
+      }
+
+
+.summoner-info{
+
+    background-color: #ffffff;
+    display: flex;
+    padding: 10px;
+    border-radius: 9px;
+    max-width: 50%;
+    width: 230px;
+    margin-left: 42%;
+    margin-top: 8%;
+    transition: all 200ms;
+    text-overflow: ellipsis;
+   
+
+}
+
+.summonerName{
+
+    display: flex;
+    margin-top: -34%;
+    margin-left: 60%;
+    
+}
+
+.summonerLevel{
+
+    display: flex;
+    margin-left: 58%;
+    
+    
+   
+}
+
+
+
+
+
+
+
+
+.match-history-container {
+    display: flex;
+    margin-left: 43.5%;
+    margin-top: 2.8%;
+    max-width: 35%;
+}
+
+.match-list {
+    display: flex;
+    flex-direction: column; /* Apila las partidas verticalmente */
+    gap: 10px; /* Espacio entre cada tarjeta de partida */
+}
+
+.match-card {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease-in-out;
+    background-color: #fcfcfc;
+    max-width: 170px;
+    border-left: 5px solid; /* Borde para indicar victoria/derrota */
+    transition: all 100ms;
+    cursor: pointer;
+    overflow: visible;
+    z-index: 2;
+
+}
+
+.match-win {
+    border-left-color: #72a5ff; /* Color para victoria (azul) */
+    background-color: #ffffff; /* Fondo más claro para victoria */
+}
+
+.match-loss {
+    border-left-color: #e84057; /* Color para derrota (rojo) */
+    background-color: #ffffff; /* Fondo más claro para derrota */
+}
+
+.match-outcome {
+    font-weight: bold;
+    font-size: 14px;
+    min-width: 70px; /* Asegura un ancho mínimo */
+    text-align: center;
+    padding: 5px;
+    border-right: 1px solid #eee;
+    margin-right: 15px;
+    color: #555;
+}
+
+.match-win .match-outcome {
+    color: #004d99; /* Azul oscuro para el texto VICTORIA */
+}
+
+.match-loss .match-outcome {
+    color: #cc0000; /* Rojo oscuro para el texto DERROTA */
+}
+
+
+.match-info {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Ocupa el espacio restante */
+}
+
+.champion-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 1px solid #ddd;
+    flex-shrink: 0; /* No se encoge */
+}
+
+.match-details {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.champion-name {
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+.game-mode {
+    color: #777;
+    font-size: 13px;
+}
+
+.kda {
+    font-weight: bold;
+    color: #000;
+    margin-top: 5px;
+}
+
+.date-duration {
+    color: #888;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+
+
+
+
+
+
+
+
+.match-main-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el icono y el texto */
+    min-width: 180px; /* Asegura un ancho mínimo para la info principal */
+    flex-shrink: 0; /* No permite que se encoja */
+    pointer-events: none;
+    position: relative;
+    z-index: 2;
+}
+
+
+.match-participants-grid {
+    display: flex;
+    width: 100%;
+}
+
+.team-column {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    flex: 1; /* Ocupa la mitad del espacio disponible */
+    gap: 3px; /* Espacio entre las filas de participantes */
+    width: 180px;
+}
+
+.team-1 {
+    margin-right: 15px; /* Pequeño margen entre los equipos */
+}
+
+.participant-row {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 2px 0;
+    border-radius: 3px;
+    /* transition: background-color 0.2s ease; */
+}
+
+.participant-win {
+    color: #004d99; /* Texto azul para los que ganaron */
+}
+
+.participant-loss {
+    color: #cc0000; /* Texto rojo para los que perdieron */
+}
+
+.participant-champion-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+    flex-shrink: 0;
+}
+
+.participant-name {
+    flex-grow: 1;
+    white-space: nowrap; /* Evita que el nombre se rompa en varias líneas */
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el nombre es muy largo */
+    max-width: 90px; /* Limita el ancho del nombre */
+}
+
+.participant-kda {
+    font-weight: bold;
+    margin-left: 5px;
+    flex-shrink: 0; /* No permite que se encoja */
+    min-width: 45px; /* Asegura un ancho mínimo para el KDA */
+    text-align: right;
+}
+
+.participants-section-VICTORIA{
+
+    display: flex;
+    position: relative;
+    margin-left: 20%;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #e6f0ff;
+    z-index: 0;
+    opacity: 0;
+    transition: all 200ms;
+}
+
+.participants-section-DERROTA{
+    
+    display: flex;
+    margin-left: 20%;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #ffe6e9;
+    z-index: 0;
+    opacity: 0;
+    transition: all 200ms;
+}
+
+.B1{
+
+    display: flex;
+    font-size: 15px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    max-width: 35px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: rgb(239, 108, 139);
+    color: #ddd;
+    margin-left: 75%; /* Espacio entre el input y el botón */
+    margin-top: -3%;
+
+}
+
+
+.arrow-button {
+  background-color: #28292d; /* Color de fondo del botón */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Relleno para el contenido */
+  border: none; /* Sin borde por defecto */
+  border-radius: 5px; /* Bordes ligeramente redondeados */
+  cursor: pointer; /* Cursor de puntero al pasar por encima */
+  font-size: 16px;
+  display: flex; /* Para alinear el texto y la flecha si la flecha es un pseudo-elemento */
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Necesario para posicionar pseudo-elementos */
+  overflow: hidden; /* Oculta partes que se salgan si la flecha es muy grande */
+  min-width: 10px; /* Ancho mínimo para que quepa el texto */
+  margin: 10px;
+  margin-top: 10px;
+  opacity: 0%;
+  transition: all 100ms;
+}
+
+
+/* Estilos de la flecha usando bordes */
+.arrow-button::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  /* Los colores de borde y tamaño se definirán por dirección */
+}
+
+.arrow-button.left::after {
+  border-width: 10px 15px 10px 0px;
+  border-color: transparent white transparent transparent;
+  left: 2px;
+}
+
+footer{
+
+    display: flex ;
+    width: 97.3%;
+    margin-top: 10%;
+    background-color: #28292d; /* Un color de fondo para el footer */
+    padding: 20px; /* Espacio interno */
+    text-align: center; /* Centrar el texto */
+    color: #555; /* Color del texto */
+    font-size: 0.9em; /* Tamaño de fuente un poco más pequeño */
+    margin-top: 24%;
+    transition: all 200ms;
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        top: 4%;
+        width: 60%;
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .search-form input {
+        width: 60%;
+        margin-bottom: 10px;
+    }
+
+    .search-form button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .search-form .tag{
+
+        margin-top: -2%;
+        margin-left: -10%;
+
+    }
+
+    .summoner-info {
+        flex-direction: column;
+        align-items: center;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .match-history-container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 30%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .match-card {
+        max-width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        font-size: 0.8em;
+    }
+
+    .Server{
+
+        top: 22%;
+    }
+
+    .B1{
+
+        margin-left: 85%;
+        margin-top: -6%;
+
+    }
+}
